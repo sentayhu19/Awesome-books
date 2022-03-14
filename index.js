@@ -43,10 +43,9 @@ const renderBook = () => {
 };
 
 renderBook();
-
+window.addEventListener('DOMContentLoaded', () => { 
 addBookBtn.addEventListener('click', (e) => {
   e.preventDefault();
-
   const title = form.title.value;
   const author = form.author.value;
 
@@ -54,4 +53,5 @@ addBookBtn.addEventListener('click', (e) => {
   form.author.value = '';
   addBook({ title, author });
   renderBook();
+});
 });
