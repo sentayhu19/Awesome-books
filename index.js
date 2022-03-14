@@ -7,12 +7,13 @@ booksList = [];
 
 function remove(btnId) {
   console.log("Remove clicked");
-  console.log("remove book "+booksList.title);
-  booksList.filter((booksList) => booksList.id === btnId).forEach((book ,i ) =>{
-    console.log("After forEAch Remove clicked");
+  
+  booksList.forEach((book, i) =>{
+    if(book.id == btnId){
     const idLi =btnId+"block";
-    book.splice(i,1);
+   booksList.splice(i,1);
  document.getElementById(idLi).style.cssText="display: none;";
+    }
 });
 }
 function addBook(book) {
@@ -43,8 +44,9 @@ addBookBtn.addEventListener("click", (e) => {
 
   var stored =JSON.parse(localStorage.getItem("bookstore"));
   //stored.push(bookstore);
-  const store = JSON.stringify(bookstore);
-  localStorage.setItem('bookstore', store);
+  
+  storeData = JSON.stringify(bookstore)
+  localStorage.setItem('bookstore', storeData);
   
   form.title.value = "";
   form.author.value = "";
