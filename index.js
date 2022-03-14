@@ -1,51 +1,54 @@
 const addBookBtn = document.querySelector(".add-book-btn");
 const form = document.querySelector(".form");
-const listItem = document.querySelector('.books-list');
-
-// books = {
-//   id: "",
-//   title: "",
-//   author: "",
-// };
+const listItem = document.querySelector(".books-list");
+const removeBtn = document.getElementsByClassName("removeBtn");
 
 booksList = [];
 
+function remove(btnId) {
+  console.log("Remove clicked");
+  console.log("remove book "+booksList.title);
+  booksList.filter((booksList) => booksList.id === btnId).forEach((book ,i ) =>{
+    console.log("After forEAch Remove clicked");
+    const idLi =btnId+"block";
+    book.splice(i,1);
+ document.getElementById(idLi).style.cssText="display: none;";
+});
+}
 function addBook(book) {
   booksList.push(book);
 }
 
-const renderBook  = () => {
-  listItem.innerHTML = '';
+const renderBook = () => {
+  listItem.innerHTML = "";
 
   booksList.forEach((book) => {
     listItem.innerHTML += `
-          <li>
+          <li id=${book.id+"block"}>
             <p>${book.title}</p>
             <p>${book.author}</p>
-            <button class="removeBtn">Remove</button>
+            <button id=${book.id} onclick="remove(this.id) "class="removeBtn">Remove</button>
+            <hr>
           </li>
-    `
-  })
-    
-}; 
-
+    `;
+   
+  });
+};
 
 addBookBtn.addEventListener("click", (e) => {
-  // const title = document.getElementById("title").value;
-  // const author = document.getElementById("author").value;
-  // console.log("Add clicked");
-  // console.log(title + " and " + author);
-  // books.title= title;
-  // books.author=author;
-  // e.preventDefault();
-
   const title = form.title.value;
   const author = form.author.value;
+  const id = Math.floor(Math.random(9) * 1000);
+  const bookstore = { id: id, title: title, author: author };
 
-  form.title.value = '';
-  form.author.value = '';
+  var stored =JSON.parse(localStorage.getItem("bookstore"));
+  //stored.push(bookstore);
+  const store = JSON.stringify(bookstore);
+  localStorage.setItem('bookstore', store);
   
-  addBook({ title, author })
+  form.title.value = "";
+  form.author.value = "";
+
+  addBook({ id, title, author });
   renderBook();
-  
 });
