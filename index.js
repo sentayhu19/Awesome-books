@@ -21,13 +21,11 @@ const renderBook = () => {
 
   booksList.forEach((book) => {
     listItem.innerHTML += `
-          <li>
-           <div>          
-              <p>${book.title}</p>
-              <p>${book.author}</p>
+          <li id="list-items">        
+              <p>${book.title} ${book.author}</p>
+              <div>
               <button class="removeBtn">Remove</button>
-              <hr>
-            </div>
+              <div>
           </li>
     `;
   });
@@ -43,15 +41,22 @@ const renderBook = () => {
 };
 
 renderBook();
+const error = document.getElementById("error");
 window.addEventListener('DOMContentLoaded', () => { 
 addBookBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const title = form.title.value;
   const author = form.author.value;
-
+ if (title==="" && author==="")
+ {
+   error.innerHTML=`<font color="red">please fill the textbox</font>`;
+   e.preventDefault();
+ }
+ else{
   form.title.value = '';
   form.author.value = '';
   addBook({ title, author });
   renderBook();
+ }
 });
 });

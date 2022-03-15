@@ -1,7 +1,26 @@
 body {
-  font-family: "Comic Neue", sans-serif;
+  font-family: 'Permanent Marker', cursive;
 }
 
 ul {
   list-style-type: none;
+}
+#list-items{
+  display: flex;
+  justify-content: space-between;
+}
+.container{
+  border: 4px black solid;
+  width: 60%;
+  margin-left: 20%;
+}
+li:nth-child(odd){
+  background-color: rgb(113, 119, 126);
+}
+h1{
+  text-align: center;
+}
+.removeBtn{
+  margin-top: 14px;
+  margin-right: 14px;
 }
