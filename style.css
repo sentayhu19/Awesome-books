@@ -1,8 +1,82 @@
-body {
-  font-family: 'Permanent Marker', cursive;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 
-ul {
+body {
+  font-family: 'Permanent Marker', cursive;
+  background-color: rgb(15, 15, 15);
+  background-color: lightgrey;
+  color: #fff;
+  color: #333;
+  padding: 20px;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.books-list {
+  width: 100%;
+  border: 2px solid #fff;
+  margin: 20px 0;
+}
+
+.books-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.books-list li:nth-child(odd) {
+  background-color: rgb(46, 46, 46);
+  background-color: lightgoldenrodyellow;
+}
+
+button {
+  border: 2px solid #fff;
+  background-color: rgb(15, 15, 15);
+  background-color: lightgray;
+  color: #fff;
+  color: #333;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  margin: 10px 0;
+  width: 50%;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #fff;
+  background-color: rgb(46, 46, 46);
+  background-color: lightgray;
+  color: #fff;
+  color: #333;
+  font-size: 18px;
+}
+
+/* ul {
   list-style-type: none;
 }
 #list-items{
@@ -23,14 +97,8 @@ h1{
 .removeBtn{
   margin-top: 14px;
   margin-right: 14px;
-}
+} */
 
-.form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;  
-}
-
-.form-container {
-  /* float: right; */
+.add-book-btn {
+  float: right;
 }
