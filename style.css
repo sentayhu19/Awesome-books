@@ -7,10 +7,7 @@
 
 body {
   font-family: 'Permanent Marker', cursive;
-  background-color: rgb(15, 15, 15);
-  background-color: lightgrey;
-  color: #fff;
-  color: #333;
+  background-color: white;
   padding: 20px;
 }
 
@@ -18,6 +15,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  border: 4px black solid;
+  width: 70%;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  text-align: center;
 }
 
 .books-list {
@@ -35,16 +41,12 @@ body {
 }
 
 .books-list li:nth-child(odd) {
-  background-color: rgb(46, 46, 46);
-  background-color: lightgoldenrodyellow;
+  background-color: #929282;
 }
 
 button {
-  border: 2px solid #fff;
-  background-color: rgb(15, 15, 15);
-  background-color: lightgray;
-  color: #fff;
-  color: #333;
+  background-color: white;
+  color: rgb(0, 0, 0);
   padding: 10px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -68,36 +70,14 @@ form {
 form input {
   width: 100%;
   padding: 10px;
-  border: 2px solid #fff;
+  border: 2px solid rgb(24, 20, 20);
   background-color: rgb(46, 46, 46);
   background-color: lightgray;
+  border-radius: 8px;
   color: #fff;
   color: #333;
   font-size: 18px;
 }
-
-/* ul {
-  list-style-type: none;
-}
-#list-items{
-  display: flex;
-  justify-content: space-between;
-}
-.container{
-  border: 4px black solid;
-  width: 60%;
-  margin-left: 20%;
-}
-li:nth-child(odd){
-  background-color: rgb(113, 119, 126);
-}
-h1{
-  text-align: center;
-}
-.removeBtn{
-  margin-top: 14px;
-  margin-right: 14px;
-} */
 
 .add-book-btn {
   float: right;
