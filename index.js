@@ -1,57 +1,70 @@
-const addBookBtn = document.querySelector('.add-book-btn');
+const listElm = document.querySelector('.books-list');
 const form = document.querySelector('.form');
-const listItem = document.querySelector('.books-list');
 
-let booksList = localStorage.getItem('awbooks')
-  ? JSON.parse(localStorage.getItem('awbooks'))
-  : [];
+class Books {
+  constructor() {
+    this.list = localStorage.getItem('booksList')
+      ? JSON.parse(localStorage.getItem('booksList'))
+      : [];
+  }
 
-function addBook(book) {
-  booksList.push(book);
+  addBook(book) {
+    this.list.push(book);
 
-  localStorage.setItem('awbooks', JSON.stringify(booksList));
+    localStorage.setItem('booksList', JSON.stringify(this.list));
+  }
+
+  removeBook(title) {
+    this.list = this.list.filter((currentBook) => currentBook.title !== title);
+    localStorage.setItem('booksList', JSON.stringify(this.list));
+  }
 }
-function removeBook(book) {
-  booksList = booksList.filter((currBook) => currBook.title !== book.title);
-  localStorage.setItem('awbooks', JSON.stringify(booksList));
-}
 
-const renderBook = () => {
-  listItem.innerHTML = '';
+const booksList = new Books();
 
-  booksList.forEach((book) => {
-    listItem.innerHTML += `
-          <li>
-           <div>          
-              <p>${book.title}</p>
-              <p>${book.author}</p>
-              <button class="removeBtn">Remove</button>
-              <hr>
-            </div>
-          </li>
+function renderBooks() {
+  listElm.innerHTML = '';
+
+  booksList.list.forEach((book) => {
+    listElm.innerHTML += `
+      <li>
+          <p><span class="title">${book.title}</span> by ${book.author}</p>
+          <button class="remBtn">Remove</button>        
+      </li>
     `;
   });
 
-  const removeBtn = document.querySelectorAll('.removeBtn');
-
-  removeBtn.forEach((btn, i) => {
+  const removeBtns = document.querySelectorAll('li button');
+  removeBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      removeBook(booksList[i]);
-      btn.parentNode.parentNode.remove();
+      const elem = btn.parentNode;
+      const bookTitle = elem.querySelector('.title').textContent;
+
+      booksList.removeBook(bookTitle);
+      elem.remove();
     });
   });
-};
+}
 
-renderBook();
-window.addEventListener('DOMContentLoaded', () => { 
-addBookBtn.addEventListener('click', (e) => {
+renderBooks();
+
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const title = form.title.value;
-  const author = form.author.value;
+
+  const title = form.title.value.trim();
+  const author = form.author.value.trim();
 
   form.title.value = '';
   form.author.value = '';
-  addBook({ title, author });
-  renderBook();
+  document.getElementById('show-book').style.cssText = 'display: block';
+  booksList.addBook({ title, author });
+  renderBooks();
 });
+function clean1() {
+  if (booksList.list.length === 0) {
+    document.getElementById('show-book').style.cssText = 'display: none';
+  }
+}
+window.addEventListener('DOMContentLoaded', () => {
+  clean1();
 });

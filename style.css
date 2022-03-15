@@ -1,7 +1,84 @@
-body {
-  font-family: "Comic Neue", sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 
-ul {
-  list-style-type: none;
+body {
+  font-family: 'Permanent Marker', cursive;
+  background-color: white;
+  padding: 20px;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  border: 4px black solid;
+  width: 70%;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.books-list {
+  width: 100%;
+  border: 2px solid #fff;
+  margin: 20px 0;
+}
+
+.books-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.books-list li:nth-child(odd) {
+  background-color: #929282;
+}
+
+button {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  margin: 10px 0;
+  width: 50%;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid rgb(24, 20, 20);
+  background-color: rgb(46, 46, 46);
+  background-color: lightgray;
+  border-radius: 8px;
+  color: #fff;
+  color: #333;
+  font-size: 18px;
+}
+
+.add-book-btn {
+  float: right;
 }
