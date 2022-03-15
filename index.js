@@ -15,11 +15,8 @@ class Books {
   }
 
   removeBook(title) {
-    // if (book) {
     this.list = this.list.filter((currentBook) => currentBook.title !== title);
-
     localStorage.setItem('booksList', JSON.stringify(this.list));
-    // }
   }
 }
 
@@ -31,7 +28,7 @@ function renderBooks() {
   booksList.list.forEach((book) => {
     listElm.innerHTML += `
       <li>
-          <p><span class="title">${book.title}</span> ${book.author}</p>
+          <p><span class="title">${book.title}</span> by ${book.author}</p>
           <button class="remBtn">Remove</button>        
       </li>
     `;
@@ -63,7 +60,6 @@ form.addEventListener('submit', (e) => {
   booksList.addBook({ title, author });
   renderBooks();
 
-  // return false;
 });
 function clean1() {
   if (booksList.list.length === 0) {
