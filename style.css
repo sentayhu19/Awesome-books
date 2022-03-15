@@ -24,3 +24,13 @@ h1{
   margin-top: 14px;
   margin-right: 14px;
 }
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.form-container {
+  /* float: right; */
+}
