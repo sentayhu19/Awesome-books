@@ -59,7 +59,6 @@ form.addEventListener('submit', (e) => {
   document.getElementById('show-book').style.cssText = 'display: block';
   booksList.addBook({ title, author });
   renderBooks();
-
 });
 function clean1() {
   if (booksList.list.length === 0) {
