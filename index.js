@@ -8,11 +8,31 @@ class Books {
     ? JSON.parse(localStorage.getItem('awbooks'))
     : [];
   }
-
+  removeBook(title) {
+    this.list = this.list.filter((currBook) => currBook.title !== title);
+    localStorage.setItem('awbooks', JSON.stringify(this.list));
+    console.log('removed');
+    this.clean1();
+  }
+  addBook(book) {
+    this.list.push(book);
+    localStorage.setItem('awbooks', JSON.stringify(this.list));
+    document.getElementById('show-book').style.cssText='display: block';
+  }
+  clean1(){
+    console.log("clean called");
+   if (this.list==='')
+   {
+      console.log("Empty");
+    document.getElementById('show-book').style.cssText='display: none';  
+  }
+  }
 }
 
-const bookList = new Books()
 
+
+const bookList = new Books()
+bookList.clean1();
 const renderBook = () => {
   listItem.innerHTML = '';
 
