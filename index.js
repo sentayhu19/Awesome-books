@@ -31,7 +31,7 @@ function renderBooks() {
   booksList.list.forEach((book) => {
     listElm.innerHTML += `
       <li>
-          <p><span class="title">"${book.title}" by </span> ${book.author}</p>
+          <p><span class="title">${book.title}</span> ${book.author}</p>
           <button class="remBtn">Remove</button>        
       </li>
     `;
