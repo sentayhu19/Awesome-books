@@ -12,7 +12,7 @@ body {
 }
 
 .home {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
@@ -85,7 +85,6 @@ form input {
 
 /* spa   */
 
-
 ul {
   list-style-type: none;
 }
@@ -97,7 +96,6 @@ a:visited {
   color: unset;
 }
 
-/* .home { */   /* ! */
 header {
   display: flex;
   align-items: center;
@@ -131,9 +129,6 @@ header h1 {      /* ! */
   border-right: 4px solid #fff;
 }
 
-
-
-
 .books-list {
   width: 100%;
   border: 2px solid #fff;
@@ -158,27 +153,21 @@ button:active {
 }
 
 .form-container {       /* ! */
-  display: flex;
   display: none;    
   flex-direction: column;
   align-items: center;
 }
 
 form {
-  /* margin: 10px 0;      */
   margin: 50px 0 20px 0;     /* ! */
   width: 50%;
 }
 
-
-
-/* .submit-btn { */
 .add-book-btn {
   float: right;
 }
 
 .contact {
-  display: flex;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -199,7 +188,6 @@ form {
 }
 
 footer {
-  /* display: flex; */
   position: absolute;
   font-size: 22px;
   font-weight: bold;
