@@ -8,7 +8,7 @@
 
 ## Live demo
 
- [Live Demo Link]( https://sentayhu19.github.io/Awesome-books/)
+[Live Demo Link](https://sentayhu19.github.io/Awesome-books/)
 
 ## Built With
 
@@ -71,7 +71,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
--This project was inspired by Microverse](https://www.microverse.org
+-This project was inspired by Microverse](https://www.microverse.org)
 
 ## 📝 License
 
