@@ -11,8 +11,6 @@ body {
   padding: 20px;
   background-image: url("./images/bg.jpg");
   color: white;
-
-  /* backdrop-filter: blur(12px); */
 }
 
 .home {
