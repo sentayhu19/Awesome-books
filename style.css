@@ -52,6 +52,7 @@ form input {
 
 .add-book-btn {
   float: right;
+  border-radius: 8px;
 }
 
 /* spa   */
