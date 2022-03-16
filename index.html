@@ -9,10 +9,22 @@
     <title>Awesome books</title>
 </head>
 <body>
-  <h1>All Awesome books</h1>
-    <section class="home" id="show-book">
+  <header>
+    <h1>Awesome books</h1>
+    <ul class="links">
+      <li><a href="#" id="home" class="active">List</a></li>
+      <li><a href="#" id="form-container">Add new</a></li>
+      <li><a href="#" id="contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <p class="date"></p>
+  
+  <section class="home flex" id="show-book">
+      <h1>All Awesome books</h1>
       <ul class="books-list"></ul>
-    </section>
+  </section>
+  
     <section class="form-container">
       <h2>Add a new book</h2>        
       <form action="#" class="form">
@@ -21,6 +33,25 @@
           <button  type="submit" class="add-book-btn">Add</button>
         </form>
     </section>
+
+    <section class="contact">
+      <h2>Contact information</h2>
+      <p>
+          Do you have any questions or you just want to say "Hello"? <br />
+          You can reach out to us!
+      </p>
+      <ul>
+          <li class="info">Our e-mail: sentayhu@gmail.com</li>
+          <li class="info">Our phone number: 1236547890</li>
+          <li class="info">Our address: 55, Street st., 53807, City, Country</li>
+      </ul>
+  </section>
+
+  <footer>
+    <p>Copyright  ...</p>
+  </footer>
+
    <script src="./index.js"></script>
+   <script src="./spa-manager.js"></script>
 </body>
 </html>

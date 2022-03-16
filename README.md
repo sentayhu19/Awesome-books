@@ -1,8 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Awsome books
+# Awesome books
 
 > This project is about building Awsome Books using javascript
+
+![Awesome Books design (20)](https://github.com/sentayhu19/Awesome-books/blob/complete-with-navigation/images/Screenshot.png)
 
 ## Live demo
 
