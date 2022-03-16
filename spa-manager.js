@@ -8,14 +8,13 @@ links.forEach((link) => {
     if (link.classList.contains('active')) return;
 
     links.forEach((a) => {
-      a.classList.remove('active')
-    })
+      a.classList.remove('active');
+    });
 
     link.classList.add('active');
 
-    document.querySelector('.flex').classList.remove('flex')
-    
-    document.querySelector(`.${link.id}`).classList.add('flex')
+    document.querySelector('.flex').classList.remove('flex');
 
+    document.querySelector(`.${link.id}`).classList.add('flex');
   });
 });

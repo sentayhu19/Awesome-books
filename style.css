@@ -9,6 +9,10 @@ body {
   font-family: 'Permanent Marker', cursive;
   background-color: white;
   padding: 20px;
+  background-image: url("./images/bg.jpg");
+  color: white;
+
+  /* backdrop-filter: blur(12px); */
 }
 
 .home {
@@ -16,7 +20,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  border: 4px black solid;
+  border: 4px rgb(245, 245, 245) solid;
   width: 70%;
   border-radius: 10px;
   margin-bottom: 40px;
@@ -24,24 +28,6 @@ body {
 
 h1 {
   text-align: center;
-}
-
-.books-list {
-  width: 100%;
-  border: 2px solid #fff;
-  margin: 20px 0;
-}
-
-.books-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  font-size: 18px;
-}
-
-.books-list li:nth-child(odd) {
-  background-color: #929282;
 }
 
 button {
@@ -56,25 +42,12 @@ button:hover {
   transform: scale(1.1);
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-form {
-  margin: 10px 0;
-  width: 50%;
-}
-
 form input {
   width: 100%;
   padding: 10px;
-  border: 2px solid rgb(24, 20, 20);
-  background-color: rgb(46, 46, 46);
+  border: 2px solid rgb(252, 249, 249);
   background-color: lightgray;
   border-radius: 8px;
-  color: #fff;
   color: #333;
   font-size: 18px;
 }
@@ -101,8 +74,9 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  border: 2px solid rgb(5, 5, 5);
+  border: 2px solid rgb(255, 253, 253);
   margin-bottom: 26px;
+  border-radius: 8px;
 }
 
 .date {          /* ! */
@@ -130,9 +104,8 @@ header h1 {      /* ! */
 }
 
 .books-list {
-  width: 100%;
-  border: 2px solid #fff;
   margin: 20px 0;
+  width: 100%;
 }
 
 .books-list li {
@@ -143,9 +116,8 @@ header h1 {      /* ! */
   font-size: 18px;
 }
 
-
-button:hover {
-  transform: scale(1.1);
+.books-list li:nth-child(odd) {
+  background-color: #3b3734;
 }
 
 button:active {
@@ -153,7 +125,7 @@ button:active {
 }
 
 .form-container {       /* ! */
-  display: none;    
+  display: none;
   flex-direction: column;
   align-items: center;
 }
@@ -161,10 +133,6 @@ button:active {
 form {
   margin: 50px 0 20px 0;     /* ! */
   width: 50%;
-}
-
-.add-book-btn {
-  float: right;
 }
 
 .contact {
@@ -188,14 +156,15 @@ form {
 }
 
 footer {
-  position: absolute;
-  font-size: 22px;
-  font-weight: bold;
-  bottom: 0;
-  right: 0;
+  position: fixed;
   left: 0;
-  height: 60px;
-  border: 4px solid #fff;
-  padding: 15px 30px;
-  margin: 10px;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  border: 2px white solid;
+  height: 40px;
+  padding: 7px 48px;
+  margin-left: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
 }
