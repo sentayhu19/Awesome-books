@@ -8,7 +8,7 @@
 
 ## Live demo
 
-[Live Demo Link](https://sentayhu19.github.io/Awesome-books/)
+[Live Demo Link]( https://sentayhu19.github.io/Awesome-books/)
 
 ## Built With
 
