@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions  */
 import selector from './selectors.js';
 
 selector.links.forEach((link) => {
