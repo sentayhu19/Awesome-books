@@ -1,13 +1,12 @@
-const timePara = new Date();
-document.querySelector('.date').textContent = timePara;
+import selector from "./selectors.js";
 
-const links = document.querySelectorAll('.links a');
 
-links.forEach((link) => {
+
+selector.links.forEach((link) => {
   link.addEventListener('click', () => {
     if (link.classList.contains('active')) return;
 
-    links.forEach((a) => {
+    selector.links.forEach((a) => {
       a.classList.remove('active');
     });
 
@@ -18,3 +17,4 @@ links.forEach((link) => {
     document.querySelector(`.${link.id}`).classList.add('flex');
   });
 });
+export default selector.links;
