@@ -1,70 +1,19 @@
-const listElm = document.querySelector('.books-list');
-const form = document.querySelector('.form');
+/* eslint-disable import/extensions, no-unused-vars  */
+import selector from './modules/selectors.js';
+import navigator from './modules/spa-manager.js';
+import Books from './modules/bookclass.js';
+import { renderBooks, booksList } from './modules/renderbooks.js';
+import { DateTime } from './modules/luxon.js';
 
-class Books {
-  constructor() {
-    this.list = localStorage.getItem('booksList')
-      ? JSON.parse(localStorage.getItem('booksList'))
-      : [];
-  }
-
-  addBook(book) {
-    this.list.push(book);
-
-    localStorage.setItem('booksList', JSON.stringify(this.list));
-  }
-
-  removeBook(title) {
-    this.list = this.list.filter((currentBook) => currentBook.title !== title);
-    localStorage.setItem('booksList', JSON.stringify(this.list));
-  }
-}
-
-const booksList = new Books();
-
-function renderBooks() {
-  listElm.innerHTML = '';
-
-  booksList.list.forEach((book) => {
-    listElm.innerHTML += `
-      <li>
-          <p><span class="title">${book.title}</span> by ${book.author}</p>
-          <button class="remBtn">Remove</button>        
-      </li>
-    `;
-  });
-
-  const removeBtns = document.querySelectorAll('li button');
-  removeBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const elem = btn.parentNode;
-      const bookTitle = elem.querySelector('.title').textContent;
-
-      booksList.removeBook(bookTitle);
-      elem.remove();
-    });
-  });
-}
-
+const datetime1 = DateTime.now().toFormat('LLL dd yyyy, hh:mm:ss a');
+selector.timeanddate.textContent = datetime1;
 renderBooks();
-
-form.addEventListener('submit', (e) => {
+selector.form.addEventListener('submit', (e) => {
   e.preventDefault();
-
-  const title = form.title.value.trim();
-  const author = form.author.value.trim();
-
-  form.title.value = '';
-  form.author.value = '';
-  // document.getElementById('show-book').style.cssText = 'display: block';
+  const title = selector.form.title.value.trim();
+  const author = selector.form.author.value.trim();
+  selector.form.title.value = '';
+  selector.form.author.value = '';
   booksList.addBook({ title, author });
   renderBooks();
-});
-function clean1() {
-  if (booksList.list.length === 0) {
-    document.getElementById('show-book').style.cssText = 'display: none';
-  }
-}
-window.addEventListener('DOMContentLoaded', () => {
-  clean1();
 });
