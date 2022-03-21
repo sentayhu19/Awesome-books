@@ -1,3 +1,4 @@
+eslint-disable Unexpected-use-of-file-extension, is-defined-but-never-used
 name: Linters
 
 on: pull_request

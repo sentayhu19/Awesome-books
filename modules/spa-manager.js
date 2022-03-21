@@ -1,6 +1,4 @@
-import selector from "./selectors.js";
-
-
+import selector from './selectors.js';
 
 selector.links.forEach((link) => {
   link.addEventListener('click', () => {
