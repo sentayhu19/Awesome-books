@@ -18,6 +18,7 @@
     },
     "ignorePatterns": [
       "dist/",
-      "build/"
+      "build/",
+      "modules/luxon.js"
     ]
   }
